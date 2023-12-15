@@ -1141,7 +1141,7 @@ export function Settings() {
               value={config.customModels}
               placeholder="model1,model2,model3"
               onChange={(e) =>
-                config.update(
+                updateConfig(
                   (config) => (config.customModels = e.currentTarget.value),
                 )
               }
@@ -1155,7 +1155,7 @@ export function Settings() {
             updateConfig={(updater) => {
               const modelConfig = { ...config.modelConfig };
               updater(modelConfig);
-              config.update((config) => (config.modelConfig = modelConfig));
+              updateConfig((config) => (config.modelConfig = modelConfig));
             }}
           />
         </List>
