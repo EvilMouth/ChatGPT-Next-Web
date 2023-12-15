@@ -217,6 +217,12 @@ const en: LocaleType = {
           UserName: "Backup Name",
           Password: "UpStash Redis REST Token",
         },
+
+        AList: {
+          Endpoint: "AList Endpoint",
+          UserName: "User Name",
+          Password: "Password",
+        },
       },
 
       LocalState: "Local Data",
@@ -443,8 +449,8 @@ const en: LocaleType = {
   },
   Exporter: {
     Description: {
-      Title: "Only messages after clearing the context will be displayed"
-    },  
+      Title: "Only messages after clearing the context will be displayed",
+    },
     Model: "Model",
     Messages: "Messages",
     Topic: "Topic",
