@@ -460,6 +460,49 @@ function SyncConfigModal(props: { onClose?: () => void }) {
             </ListItem>
           </List>
         )}
+
+        {syncStore.provider === ProviderType.AList && (
+          <>
+            <List>
+              <ListItem title={Locale.Settings.Sync.Config.AList.Endpoint}>
+                <input
+                  type="text"
+                  value={syncStore.alist.endpoint}
+                  onChange={(e) => {
+                    syncStore.update(
+                      (config) =>
+                        (config.alist.endpoint = e.currentTarget.value),
+                    );
+                  }}
+                ></input>
+              </ListItem>
+
+              <ListItem title={Locale.Settings.Sync.Config.AList.UserName}>
+                <input
+                  type="text"
+                  value={syncStore.alist.username}
+                  onChange={(e) => {
+                    syncStore.update(
+                      (config) =>
+                        (config.alist.username = e.currentTarget.value),
+                    );
+                  }}
+                ></input>
+              </ListItem>
+              <ListItem title={Locale.Settings.Sync.Config.AList.Password}>
+                <PasswordInput
+                  value={syncStore.alist.password}
+                  onChange={(e) => {
+                    syncStore.update(
+                      (config) =>
+                        (config.alist.password = e.currentTarget.value),
+                    );
+                  }}
+                ></PasswordInput>
+              </ListItem>
+            </List>
+          </>
+        )}
       </Modal>
     </div>
   );
@@ -635,7 +678,8 @@ export function Settings() {
         navigate(Path.Home);
       }
     };
-    if (clientConfig?.isApp) { // Force to set custom endpoint to true if it's app
+    if (clientConfig?.isApp) {
+      // Force to set custom endpoint to true if it's app
       accessStore.update((state) => {
         state.useCustomConfig = true;
       });

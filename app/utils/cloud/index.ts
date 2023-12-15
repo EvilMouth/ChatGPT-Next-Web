@@ -1,14 +1,17 @@
 import { createWebDavClient } from "./webdav";
 import { createUpstashClient } from "./upstash";
+import { createAListClient } from "./alist";
 
 export enum ProviderType {
   WebDAV = "webdav",
   UpStash = "upstash",
+  AList = "alist",
 }
 
 export const SyncClients = {
   [ProviderType.UpStash]: createUpstashClient,
   [ProviderType.WebDAV]: createWebDavClient,
+  [ProviderType.AList]: createAListClient,
 } as const;
 
 type SyncClientConfig = {

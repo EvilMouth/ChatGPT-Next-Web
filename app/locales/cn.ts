@@ -214,6 +214,12 @@ const cn = {
           UserName: "备份名称",
           Password: "UpStash Redis REST Token",
         },
+
+        AList: {
+          Endpoint: "AList 地址",
+          UserName: "用户名",
+          Password: "密码",
+        },
       },
 
       LocalState: "本地数据",
@@ -441,9 +447,9 @@ const cn = {
     Config: "配置",
   },
   Exporter: {
-    Description : {
-      Title: "只有清除上下文之后的消息会被展示"
-    },  
+    Description: {
+      Title: "只有清除上下文之后的消息会被展示",
+    },
     Model: "模型",
     Messages: "消息",
     Topic: "主题",
